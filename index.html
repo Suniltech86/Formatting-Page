@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<title>Formatting Page</title>
+<meta name="view port" content="width=device-width,initial-scale=1">
+<style>
+body{background:#f4f4f4; align-items:center;}
+.formatting{background:linear-gradient(blue,green);border-radius:20px; box-shadow:0px 0px 10px; padding:20px; width:80%; margin:auto; text-align:center;}
+#ta{width:100%; height:200px; cursor:pointer; }
+button{border-radius:20px; font-size:15px; }
+button:hover{transform:scale(0.8);}
+</style>
+</head>
+<body>
+<div class="formatting">
+<div class="textarea">
+<textarea id="ta" placeholder="Type here..." autofocus></textarea>
+</div>
+<div id="tb">
+<table>
+<tr><td><button id="bold" title="bold" ><b>B</b></button></td>
+    <td><button id="italic" title="italic" ><i>I</i></button></td>
+	<td><button id="ul" title="underline"><u>U</u></button>
+	<td><button id="strike" title="strike"><s>S</s></button></td>
+    <td><input type="color" id="c" title="color"></td>
+    <td><button id="left" title="left align" title="bold">Left</button></td>
+	<td><button id="center" title="center align" title="bold">Center</button></td>
+	<td><button id="right" title="right align">Right</button></td>
+	<td><select id="fontsize" title="font size">
+        <option>Font Size</option> 	
+	    <option value="20">20</option>
+ 		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+		<option value="24">24</option>
+		<option value="25">26</option>
+		<option value="26">27</option>
+		</select></td>
+</table>
+</div>
+</div>
+</body>
+<script>
+data=document.getElementById("ta");
+document.getElementById("bold").onclick=function(){
+                        if(data.style.fontWeight=="bold")
+                           data.style.fontWeight="normal";
+                        else
+                           data.style.fontWeight="bold";
+}						
+document.getElementById("italic").onclick=function(){
+                       if(data.style.fontStyle=="italic")
+                          data.style.fontStyle="normal";
+                       else 
+                          data.style.fontStyle="italic";
+}
+document.getElementById("ul").onclick=function(){
+                        if(data.style.textDecoration=="underline")
+                           data.style.textDecoration="none";
+                        else
+                           data.style.textDecoration="underline";
+}
+document.getElementById("strike").onclick=function(){
+                        if(data.style.textDecoration=="line-through")
+                           data.style.textDecoration="none";
+                        else
+                           data.style.textDecoration="line-through";
+}						   
+document.getElementById("c").onchange=function(){
+                        data.style.color=c.value;
+}
+document.getElementById("left").onclick=function(){
+                         data.style.textAlign="left";
+}
+document.getElementById("center").onclick=function(){
+                         data.style.textAlign="center";
+}
+document.getElementById("right").onclick=function(){
+                         data.style.textAlign="right";
+}
+document.getElementById("fontsize").onchange=function(){
+                         data.style.fontSize=`${document.getElementById("fontsize").value}px`;
+}						 
+
+</script>
+</html>
